@@ -26,7 +26,7 @@ const Home = () => {
         </Right>
       </Content>
       <Section>
-        <Button1 href = "meetnow"><span>Join the Call</span></Button1>
+        <Button1 href = "/joincall"><span>Join the Call</span></Button1>
         <Button2 href = "appointment"><span>Book Appointment</span></Button2>
       </Section>
 
@@ -103,6 +103,9 @@ const Cards = styled.div`
   grid-template-columns: 245px 245px;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
+  @media (max-width: 768px){
+    grid-template-columns: 220px 220px;
+  }
 
 `;
 
@@ -135,18 +138,26 @@ const Button1 = styled.a`
   background-color: #efeded;
   color: black;
   margin: 15px;
-  padding: 10px 80px 10px 80px;
+  width: 250px;
+  height: 40px;
   border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   
 `;
 
 const Button2 = styled.a`
   text-decoration: none;
   background-color: black;
-  color: #f9f9f9;
+  color: white;
   margin: 15px;
-  padding: 10px 58px 10px 58px;
+  width: 250px;
+  height: 40px;
   border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
 `;
 

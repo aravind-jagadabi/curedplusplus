@@ -2,7 +2,9 @@
 
 const AppointmentBooking = () => {
   return(
-    <div></div>
+    <div>
+      Complete Appointment Booking
+    </div>
   );
 }
 
