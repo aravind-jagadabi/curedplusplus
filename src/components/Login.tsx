@@ -12,7 +12,7 @@ const Login = () => {
   const dispatch = useAppDispatch();
 
   onAuthStateChanged(firebaseAuth, (currentUser) => {
-    if(currentUser) navigate("/home");
+    if(currentUser) navigate("/");
   })
 
   const login = async() =>{
@@ -31,7 +31,7 @@ const Login = () => {
       }
     }
     dispatch(setUser({uid, name: displayName, email}));
-    navigate("/home");
+    navigate("/");
 
   };
 

@@ -46,7 +46,7 @@ const Header = () => {
     <Container>
       <Content>
         <Logo>
-          <a href = "/home">
+          <a href = "/">
             <Image src = "/images/cpplogo.png" alt = "Company Logo" />
           </a>
         </Logo>
@@ -78,9 +78,6 @@ const Header = () => {
                 </span>
                 { showIllnesses && <Illnesses />}
               </a>
-            </NavList>
-            <NavList>
-              <a><span> Meetings</span></a>
             </NavList>
              
           </NavListWrap>
