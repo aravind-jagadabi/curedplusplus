@@ -1,46 +1,44 @@
-# Getting Started with Create React App
+# Cured Plus Plus
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was hosted here
 
-## Available Scripts
+## About the Project
 
-In the project directory, you can run:
+I have built this project to help people connect with International Doctors around the world to discuss their Health Issues which are Terminal Illnesses for cure and for Treatment.
 
-### `npm start`
+### Features Implemented
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Users can choose the type of doctor that they wish to meet.
+2. Users can choose a specific country for doctors whom they want to talk with.
+3. Users can choose the Illness that they're looking for treatment.
+4. Secured Video Call Appointments with fully flexible dates and times.
+5. Attend the call from anywhere from the Website itself based on your scheduled timings.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Built With
 
-### `npm test`
+1. TypeScript
+2. React.js
+3. Firebase
+4. Styled Components
+5. WebRTC
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Instructions To Follow
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### packages you should have installed
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. "react": "^18.2.0"
+2. "react-redux": "^9.1.0"
+3. "react-router-dom": "^6.22.1"
+4. "@reduxjs/toolkit": "^2.2.1"
+5. "@types/node": "^16.18.82"
+6. "firebase": "^10.8.0"
+7. "styled-components": "^6.1.8"
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Steps to Run
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Clone this repository
+2. Open with Visual Studio or any Software Tool
+3. Go to the project folder in the terminal
+4. make sure you have installed all required packages
+5. Start the server with *Npm Start*
