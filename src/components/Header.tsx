@@ -79,6 +79,9 @@ const Header = () => {
                 { showIllnesses && <Illnesses />}
               </a>
             </NavList>
+            <NavList>
+              <a><span> Meetings</span></a>
+            </NavList>
              
           </NavListWrap>
         </Nav>
