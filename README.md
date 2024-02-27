@@ -1,7 +1,5 @@
 # Cured Plus Plus
 
-This project was hosted here
-
 ## About the Project
 
 I have built this project to help people connect with International Doctors around the world to discuss their Health Issues which are Terminal Illnesses for cure and for Treatment.
