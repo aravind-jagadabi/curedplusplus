@@ -47,7 +47,7 @@ const Header = () => {
       <Content>
         <Logo>
           <a href = "/">
-            <Image src = "/images/cpplogo.png" alt = "Company Logo" />
+            <Image src = "/images/cpplogo.png" alt = "Company Logo" draggable={false}/>
           </a>
         </Logo>
         <Nav>
@@ -56,7 +56,7 @@ const Header = () => {
               <a onMouseOver={handleShowDoctors} onMouseOut={handleNotShowDoctors}>
                 <span>
                   Doctors
-                  <DownLogo src="/images/down.png" />
+                  <DownLogo src="/images/down.png" draggable={false}/>
                 </span>
                 { showDoctors && <Doctors />}
               </a>
@@ -65,7 +65,7 @@ const Header = () => {
               <a onMouseOver={handleShowCountry} onMouseOut={handleNotShowCountry}>
                 <span>
                   Countries
-                  <DownLogo src="/images/down.png" />
+                  <DownLogo src="/images/down.png" draggable={false}/>
                 </span>
                 { showCountry && <Country />}
               </a>
@@ -74,23 +74,26 @@ const Header = () => {
               <a onMouseOver={handleShowIllnesses} onMouseOut={handleNotShowIllnesses}>
                 <span>
                   Illnesses
-                  <DownLogo src="/images/down.png" />
+                  <DownLogo src="/images/down.png" draggable={false}/>
                 </span>
                 { showIllnesses && <Illnesses />}
               </a>
+            </NavList>
+            <NavList>
+              <a><span>Appointments</span></a>
             </NavList>
              
           </NavListWrap>
         </Nav>
         <Profile>
           <a href = "/support">
-            <Support src = "/images/support.png" alt = "Support" />
+            <Support src = "/images/support.png" alt = "Support" draggable={false}/>
           </a>
           <a href = "/language">
-            <Language src = "/images/globe.png" alt = "Language" />
+            <Language src = "/images/globe.png" alt = "Language" draggable={false}/>
           </a>
           <a onClick={handleUserClick} >
-            <User src = "/images/user.png" alt = "User" />
+            <User src = "/images/user.png" alt = "User" draggable={false}/>
           </a>
           {showSignOut && <SignOut>
             <a onClick={logout}>Sign Out</a>

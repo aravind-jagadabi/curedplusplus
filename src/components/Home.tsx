@@ -12,7 +12,7 @@ const Home = () => {
       </Section>
       <Content>
         <Left>
-          <Image src = "/images/doctors.jpg" alt = "World Map" />
+          <Image src = "/images/doctors.png" alt = "Doctor Types" draggable={false}/>
         </Left>
         <Right>
           <Cards>

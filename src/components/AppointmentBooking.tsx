@@ -32,12 +32,17 @@ const AppointmentBooking = () => {
           <h1>Schedule Meeting</h1>
         </Heading>
         <DoctorPick>
-          <p>Doctor Type</p>
-          <DropdownSelect options={doctors}/>
-          <p>Illness Type</p>
-          <DropdownSelect options={problems}/>
-          <p>Country</p>
-          <DropdownSelect options={countries}/>
+          <Left>
+            <p>Doctor Type</p>
+            <DropdownSelect options={doctors}/>
+            <p>Illness Type</p>
+            <DropdownSelect options={problems}/>
+            <p>Country</p>
+            <DropdownSelect options={countries}/>
+          </Left>
+          <Right>
+            <Image src = "/images/appointment.jpg" alt = "Doctor Types" draggable={false}/>
+          </Right>
         </DoctorPick>
         <BookingDetails>
           <p>When</p>
@@ -92,6 +97,12 @@ const Heading = styled.div`
 `;
 const DoctorPick = styled.div`
   display: flex;
+  flex-direction: row;
+
+`;
+
+const Left = styled.div`
+  display: flex;
   flex-direction: column;
 
   p{
@@ -102,6 +113,25 @@ const DoctorPick = styled.div`
   }
 
 `;
+const Right = styled.div``;
+
+const Image = styled.img`
+  max-width: 278px;
+  margin-left: 40px;
+  margin-top: 42px;
+  /* box-shadow: 0 2px 12px 0 rgba(35, 35, 51, .5); */
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+
+  @media(max-width:768px){
+    max-width: 0px;
+  }
+
+`;
+
+
 const BookingDetails = styled.div`
   display: flex;
   flex-direction: column;

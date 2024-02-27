@@ -42,7 +42,6 @@ const Item = styled.div`
   color: black;
   padding: 4px 2px 4px 15px;
   border-radius: 8px;
-  margin:2px;
 
   &:hover{
     background-color: #f1f4f6;
