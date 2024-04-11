@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import DropdownSelect from "./Dropdownselect";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { SocketContext } from "../SocketContext";
 
-const AppointmentBooking = () => {
+const AppointmentBooking = ({children}:any) => {
   const doctors: string[] = ["Oncologist", "Cardiologist", "Neurologist", "Pulmonologist", "Gastroenterologist", "Endocrinologist",
   "Rheumatologist", "Nephrologist", "Hematologist", "Infectious Specialist", "Dermatologist", "Psychiatrist", "Urologist",
   "Ophthalmologist", "Orthopedic Surgeon", "Palliative Care Specialist", "Geneticist", "Allergist", "Geriatrician",
@@ -23,7 +24,29 @@ const AppointmentBooking = () => {
   problems.sort();
 
   const [selectedDate, setSelectedDate] = useState(new Date());
+  const [userName, setUserName] = useState("");
+  const [userEmail, setUserEmail] = useState("");
   
+
+  //context usage
+  const socketContext = useContext(SocketContext);
+  
+  if (!socketContext) {
+    // Handle case where context is null (optional)
+    return <div>Loading...</div>;
+  }
+  const {me, callAccepted, callEnded, name, setName, leaveCall, callUser} = socketContext;
+
+
+  //handling user inputs
+  const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setUserName(event.target.value);
+    setName(event.target.value);
+  }
+  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setUserEmail(event.target.value);
+  }
+
 
   return(
     <Container>
@@ -44,7 +67,7 @@ const AppointmentBooking = () => {
             <Image src = "/images/appointment.jpg" alt = "Doctor Types" draggable={false}/>
           </Right>
         </DoctorPick>
-        <BookingDetails>
+        <BookingDetails noValidate autoComplete="off">
           <p>When</p>
           <BookDate>
           <input
@@ -57,8 +80,10 @@ const AppointmentBooking = () => {
             <DropdownSelect options={availableTime} />
           </BookDate>
           
+          <p>Full Name</p>
+          <Name type = "text" value = {name} placeholder="Your Name" onChange={handleNameChange}/>
           <p>Enter mail to receive the Invite</p>
-          <input type = "mail" placeholder="Your Email"/>
+          <input type = "mail" placeholder="Your Email" onChange={handleEmailChange}/>
         </BookingDetails>
         <Payment>
           <a><span>Book Appointment</span></a>
@@ -120,8 +145,8 @@ const Image = styled.img`
   margin-left: 40px;
   margin-top: 42px;
   /* box-shadow: 0 2px 12px 0 rgba(35, 35, 51, .5); */
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
   border-top-left-radius: 2px;
   border-bottom-left-radius: 2px;
 
@@ -132,7 +157,7 @@ const Image = styled.img`
 `;
 
 
-const BookingDetails = styled.div`
+const BookingDetails = styled.form`
   display: flex;
   flex-direction: column;
 
@@ -159,6 +184,9 @@ const BookingDetails = styled.div`
   }
 
 `;
+
+const Name = styled.input``;
+
 const Payment = styled.div`
   display: flex;
   justify-content: center;

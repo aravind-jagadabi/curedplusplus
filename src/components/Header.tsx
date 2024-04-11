@@ -80,7 +80,7 @@ const Header = () => {
               </a>
             </NavList>
             <NavList>
-              <a><span>Appointments</span></a>
+              <a href = "/bookings"><span>Appointments</span></a>
             </NavList>
              
           </NavListWrap>
@@ -191,7 +191,7 @@ const NavList = styled.li`
       padding-bottom: 4px;
       border-radius: 3px;
       font-size: 17px;
-      opacity: 75%;
+      opacity: 100%;
     }
 
     @media (max-width: 768px) {

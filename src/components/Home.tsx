@@ -27,7 +27,7 @@ const Home = () => {
       </Content>
       <Section>
         <Button1 href = "/joincall"><span>Join the Call</span></Button1>
-        <Button2 href = "appointment"><span>Book Appointment</span></Button2>
+        <Button2 href = "/appointment"><span>Book Appointment</span></Button2>
       </Section>
 
     </Container>

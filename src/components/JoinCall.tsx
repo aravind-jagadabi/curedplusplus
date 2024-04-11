@@ -1,16 +1,38 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { SocketContext } from "../SocketContext";
 
-const JoinCall = () => {
+const JoinCall = ({children}:any) => {
 
+  //UI part first created
   const [userInput, setUserInput] = useState("");
+  const navigate = useNavigate();
 
+
+  //using all context part after fixing bugs on socketcontext
+  const [idToCall, setIdToCall] = useState<string>('');
+  const socketContext = useContext(SocketContext);
+  
+  if (!socketContext) {
+    // Handle case where context is null (optional)
+    return <div>Loading...</div>;
+  }
+  const {me, callAccepted, callEnded, name, setName, leaveCall, callUser} = socketContext;
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setUserInput(event.target.value);
+    setIdToCall(event.target.value);
   }
+  console.log({me});
 
-
+  const handleJoinClick = () => {
+    if(userInput){
+      callUser(idToCall);
+      navigate("/connect");
+      
+    }
+  }
 
   return(
     <Container>
@@ -18,8 +40,8 @@ const JoinCall = () => {
         <h1>Join Meeting</h1>
         <JoinSection>
           <p>Meeting ID or Personal Link Name</p>
-          <input type="text" placeholder="Enter Meeting ID or Personal Link Name" onChange={handleInputChange}></input>
-          <button>Join</button>
+          <input type="text" value = {idToCall} placeholder="Enter Meeting ID or Personal Link Name" onChange={handleInputChange}></input>
+          <button onClick={handleJoinClick}>Join</button>
         </JoinSection>
       </LoginBox>
     </Container>
