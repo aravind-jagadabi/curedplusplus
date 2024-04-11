@@ -17,8 +17,10 @@ I have built this project to help people connect with International Doctors arou
 1. TypeScript
 2. React.js
 3. Firebase
-4. Styled Components
-5. WebRTC
+4. Node.js
+5. Express.js
+6. Styled Components
+7. WebRTC
 
 
 ## Instructions To Follow
